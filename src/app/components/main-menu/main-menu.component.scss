@@ -25,6 +25,9 @@ li {
 li:hover {
     color: #cbeaf0;
 }
+li:focus {
+    outline: none;
+}
 .main-element {
     text-transform: uppercase;
 }
