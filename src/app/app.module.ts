@@ -12,6 +12,8 @@ import { MessagesFilterComponent } from './components/messages/messages-filter/m
 import { MessagesTableComponent } from './components/messages/messages-table/messages-table.component';
 import { MessagesTableHeaderComponent } from './components/messages/messages-table-header/messages-table-header.component';
 import { MessagesTableBodyComponent } from './components/messages/messages-table-body/messages-table-body.component';
+import { NewMessagePageComponent } from './components/messages/new-message-page/new-message-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { MessagesTableBodyComponent } from './components/messages/messages-table
     MessagesFilterComponent,
     MessagesTableComponent,
     MessagesTableHeaderComponent,
-    MessagesTableBodyComponent
+    MessagesTableBodyComponent,
+    NewMessagePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
-
+*:focus {
+    outline: none;
+}
 .card {
     vertical-align: top;
     display: inline-block;

@@ -1,14 +1,26 @@
 <div>
     <table>
         <tbody>
-            <tr>
+            <tr *ngFor="let message of messages">
+                <td class="select"><input type="checkbox"/></td>
+                <td class="theme">{{message.theme}}</td>
+                <td class="date">{{message.sendDate}}</td>
+                <td class="recipient">{{message.recipientEmail}}</td>
+                <td class="delivery-service">Send Pulse</td>
+                <td class="status">Доставлено</td>
+                <td class="func-buttons">
+                    <button>Редактировать</button>
+                    <button (click)="onDeleteMessage(message.id)">Удалить</button>
+                </td>
+            </tr>
+            <!-- <tr>
                 <td class="select"><input type="checkbox"/></td>
                 <td class="theme">Добрый вечер</td>
                 <td class="date">{{randomDate}}</td>
                 <td class="recipient">r0bari@yandex.ru</td>
                 <td class="size">{{randomSize}}</td>
-                <td class="delivery-service">{{randomDate}}</td>
-                <td class="status">{{randomDate}}</td>
+                <td class="delivery-service">Amazon SES</td>
+                <td class="status">Доставлено</td>
                 <td class="func-buttons">
                     <button>Редактировать</button>
                     <button>Удалить</button>
@@ -20,26 +32,13 @@
                 <td class="date">{{randomDate}}</td>
                 <td class="recipient">r0bari@yandex.ru</td>
                 <td class="size">{{randomSize}}</td>
-                <td class="delivery-service">{{randomDate}}</td>
-                <td class="status">{{randomDate}}</td>
+                <td class="delivery-service"></td>
+                <td class="status">Ожидает отправки</td>
                 <td class="func-buttons">
                     <button>Редактировать</button>
                     <button>Удалить</button>
                 </td>
-            </tr>
-            <tr>
-                <td class="select"><input type="checkbox"/></td>
-                <td class="theme">Добрый вечер</td>
-                <td class="date">{{randomDate}}</td>
-                <td class="recipient">r0bari@yandex.ru</td>
-                <td class="size">{{randomSize}}</td>
-                <td class="delivery-service">{{randomDate}}</td>
-                <td class="status">{{randomDate}}</td>
-                <td class="func-buttons">
-                    <button>Редактировать</button>
-                    <button>Удалить</button>
-                </td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 </div>

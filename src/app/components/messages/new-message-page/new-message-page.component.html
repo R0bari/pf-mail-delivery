@@ -1,0 +1,26 @@
+<header class="new-message-header">
+    <div class="new-message-title-block">
+        <h2 class="title">Новое сообщение</h2>
+    </div>
+</header>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div class="form-block">
+        <label>Получатель</label>
+        <textarea placeholder="Введите адрес получателя" formControlName="recipient" required></textarea>
+    </div>
+    <div class="form-block">
+        <label>Тема</label>
+        <textarea placeholder="Введите тему сообщения" formControlName="theme" required></textarea>
+    </div>
+    <div class="form-block">
+        <label>Текст сообщения</label>
+        <textarea type="text" placeholder="Введите текст сообщения" class="body-text" formControlName="body" required></textarea>  
+    </div>
+    <div class="form-block">
+        <label>Выберите файлы, которые необходимо прикрепить</label>
+        <input type="file" id="file-input">
+    </div>
+    <div class="form-block">
+        <button class="button" type="submit" [disabled]="checkoutForm.invalid">Создать</button>
+    </div>
+</form>
