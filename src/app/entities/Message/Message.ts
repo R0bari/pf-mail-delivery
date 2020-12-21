@@ -8,6 +8,7 @@ export class Message {
     senderEmail: string;
     recipientEmail: string;
     sendDate: string;
+    deliveryService: string;
 
     constructor(id: number, specification: MessageSpecification) {
         this.id = id;
@@ -19,7 +20,7 @@ export class Message {
         this.senderId = Math.floor(Math.random() * 10000);
         this.recipientEmail = specification.recipientEmail;
         this.sendDate = specification.sendDate;
-
+        this.deliveryService = specification.deliveryService;
     }
     
     static editMessage(messageToEdit: Message, specification: MessageSpecification) {

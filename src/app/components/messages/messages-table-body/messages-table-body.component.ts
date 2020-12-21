@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'src/app/entities/Message/Message';
-import { MessagesService } from 'src/app/services/messages.service';
+import { MessagesService } from 'src/app/services/messages-service/messages.service';
 
 @Component({
   selector: 'app-messages-table-body',

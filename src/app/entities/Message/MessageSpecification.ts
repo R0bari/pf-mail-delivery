@@ -6,4 +6,5 @@ interface MessageSpecification {
     senderEmail: string;
     recipientEmail: string;
     sendDate: string;
+    deliveryService: string;
 }

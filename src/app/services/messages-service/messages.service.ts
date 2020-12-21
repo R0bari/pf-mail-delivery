@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { read } from 'fs';
-import { Message } from '../entities/Message/Message';
+import { Message } from '../../entities/Message/Message';
 
 @Injectable({
   providedIn: 'root'

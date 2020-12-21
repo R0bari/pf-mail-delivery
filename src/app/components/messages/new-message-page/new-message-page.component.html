@@ -17,10 +17,16 @@
         <textarea type="text" placeholder="Введите текст сообщения" class="body-text" formControlName="body" required></textarea>  
     </div>
     <div class="form-block">
+        <label>Выберите сервис доставки</label>
+        <select formControlName="deliveryService" [ngModel]="newMessage.deliveryService">
+            <option *ngFor="let service of services">{{service}}</option>
+        </select>
+    </div>
+    <div class="form-block">
         <label>Выберите файлы, которые необходимо прикрепить</label>
         <input type="file" id="file-input">
     </div>
     <div class="form-block">
-        <button class="button" type="submit" [disabled]="checkoutForm.invalid">Создать</button>
+        <button class="button" type="submit" [disabled]="checkoutForm.invalid">Отправить</button>
     </div>
 </form>
