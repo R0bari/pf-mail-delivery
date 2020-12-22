@@ -14,17 +14,24 @@
     </div>
     <div class="form-block">
         <label>Текст сообщения</label>
-        <textarea type="text" placeholder="Введите текст сообщения" class="body-text" formControlName="body" required></textarea>  
+        <textarea type="text" placeholder="Введите текст сообщения" class="body-text" formControlName="body"
+            required></textarea>
     </div>
     <div class="form-block">
         <label>Выберите сервис доставки</label>
         <select formControlName="deliveryService" [ngModel]="newMessage.deliveryService">
-            <option *ngFor="let service of services">{{service}}</option>
+            <option></option>
+            <option *ngFor="let service of services" >{{service}}</option>
         </select>
     </div>
     <div class="form-block">
-        <label>Выберите файлы, которые необходимо прикрепить</label>
-        <input type="file" id="file-input">
+        <label *ngIf="files.length === 0" class="label-file-input" for="file-input">Выберите файлы</label>
+        <input type="file" id="file-input" formControlName="files" (change)="onChangeFiles($event)" multiple>
+        <div *ngIf="files.length > 0" class="files-block">
+            <span class="reset-files" (click)="onResetFiles()">X</span>
+            <p class="chosen-files-title">Выбранные файлы:</p>
+            <p class="chosen-file" *ngFor="let file of files; let i = index">{{i+1}}) {{file.name}}</p>
+        </div>
     </div>
     <div class="form-block">
         <button class="button" type="submit" [disabled]="checkoutForm.invalid">Отправить</button>

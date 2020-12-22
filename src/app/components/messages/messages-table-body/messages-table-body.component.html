@@ -3,9 +3,9 @@
         <tbody>
             <tr *ngFor="let message of messages">
                 <td class="select"><input type="checkbox"/></td>
-                <td class="theme">{{message.theme}}</td>
-                <td class="date">{{message.sendDate}}</td>
                 <td class="recipient">{{message.recipientEmail}}</td>
+                <td class="date">{{message.sendDate}}</td>
+                <td class="theme">{{message.theme}}</td>
                 <td class="delivery-service">{{message.deliveryService}}</td>
                 <td class="status">Доставлено</td>
                 <td class="func-buttons">

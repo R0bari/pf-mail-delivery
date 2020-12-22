@@ -9,9 +9,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./new-message-page.component.scss']
 })
 export class NewMessagePageComponent implements OnInit {
+  files: Array<string> = [];
   newMessage : MessageSpecification;
   checkoutForm : FormGroup;
-  services : Array<string> = [ 'Sendpulse', "Amazon SES", 'SendGrid' ];
+  services : Array<string> = [ 'Sendpulse', 'Amazon SES', 'SendGrid' ];
 
   constructor(private router: Router,
               private messageService: MessagesService,
@@ -30,7 +31,8 @@ export class NewMessagePageComponent implements OnInit {
       recipient: new FormControl(null, [Validators.required, Validators.minLength(6)]),
       theme: new FormControl(null, [Validators.required]),
       body: new FormControl(null, [Validators.required]),
-      deliveryService: new FormControl(null, [Validators.required])
+      deliveryService: new FormControl(null, [Validators.required]),
+      files: new FormControl(this.files)
     })
   }
 
@@ -40,8 +42,13 @@ export class NewMessagePageComponent implements OnInit {
   clearFileInput() : void {
 
   }
-  chooseFile(event : any) {
-
+  onChangeFiles(event: any) {
+    if (event.target.files.length > 0) {
+      this.files = event.target.files;
+    }
+  }
+  onResetFiles() {
+    this.files = [];
   }
   onSubmit(messageData : any) {
     this.newMessage.recipientEmail = messageData.recipient;
@@ -49,6 +56,7 @@ export class NewMessagePageComponent implements OnInit {
     this.newMessage.body = messageData.body;
     this.newMessage.senderEmail = "r0bari@yandex.ru";
     this.newMessage.deliveryService = messageData.deliveryService;
+    this.newMessage.files = this.files;
     this.messageService.createNewMessage(this.newMessage);
     this.router.navigate(['/messages']);
   }

@@ -9,12 +9,21 @@
     margin: 15px 30px 0px 0px;
 }
 .table-column-title {
+    vertical-align: middle;
     font-size: 16px;
     font-weight: 500;
+    text-align: left;
     display: inline-block;
-    padding: 15px 50px 15px 30px;
-    min-width: 100px;
+    box-sizing: border-box;
+    padding: 15px 10px;
+    width: 100px;
     cursor: pointer;
+}
+.large-width-title {
+    width: 150px;
+}
+.delivery-service-title {
+    width: 120px;
 }
 .center {
     text-align: center;
